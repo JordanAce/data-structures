@@ -14,22 +14,17 @@ var Queue = function() {
   };
 
   someInstance.dequeue = function() {
-    //debugger;
-    var dequeuedValue = storage['1'];
-    console.log(storage);
-    delete storage['1'];
 
+    var dequeuedValue = storage['1'];
+    delete storage['1'];
     if (storage.length <= 0) {
       storage.length = 0;
     } else {
       storage.length--;
     }
-
     for (var key in storage) {
       storage[key - 1] = storage[key];
     }
-
-    //console.log(storage);
     return dequeuedValue;
   };
 
