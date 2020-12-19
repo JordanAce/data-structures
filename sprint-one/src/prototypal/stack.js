@@ -30,7 +30,7 @@ stackMethods.size = function () {
     return 0;
   } else {
     return this.length;
-}
+  }
 };
 
 
