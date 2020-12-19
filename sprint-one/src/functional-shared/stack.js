@@ -14,19 +14,16 @@ var stackMethods = {};
 stackMethods.push = function(value) {
   this.length++;
   this.storage[this.length] = value;
-  //console.log(storage);
 };
 
 stackMethods.pop = function() {
   var poppedValue = this.storage[this.length];
   delete this.storage[this.length];
-  //console.log(storage);
   this.length--;
   return poppedValue;
 };
 
 stackMethods.size = function() {
-  //console.log(stackStorage.length);
   if (this.length <= 0) {
     return 0;
   } else {
