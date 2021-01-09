@@ -42,7 +42,6 @@ BinarySearchTree.prototype.contains = function (value) { // {value: 2, left: nul
 
 BinarySearchTree.prototype.depthFirstLog = function(cb) {
 
-// var bst = {value: 2, left: null, right: {value: 3, left: null, right: {value: 7, left: null, right: null}}}
 
   cb(this.value);
 
