@@ -89,6 +89,18 @@ Graph.prototype.forEachNode = function(cb) {
   }
 };
 
+Graph.prototype.moreThanOneEdge = function() {
+  var result = false;
+
+  for (var key in this.edges) {
+    if (this.edges[key].length > 1) {
+      result = true;
+    }
+  }
+
+  return result;
+};
+
 var graph = new Graph();
 /*
  .addNode = O(1)
