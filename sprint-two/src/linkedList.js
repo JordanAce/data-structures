@@ -2,6 +2,7 @@ var LinkedList = function() {
   var list = {};
   list.head = null;
   list.tail = null;
+  list.size = 0;
 
   // var list = {{head : {value : 4, next : {value: 5, next: null}}}, {tail: {value: 5, next: null}}}
 
@@ -18,11 +19,14 @@ var LinkedList = function() {
       lastnode.next = Node(value);
       list.tail = lastnode.next;
     }
+
+    list.size++;
   };
 
   list.removeHead = function() {
     var storedHead = list.head.value;
     list.head = list.head.next;
+    list.size--;
     return storedHead;
   };
 
@@ -37,6 +41,8 @@ var LinkedList = function() {
     }
     return result;
   };
+
+
   return list;
 };
 
