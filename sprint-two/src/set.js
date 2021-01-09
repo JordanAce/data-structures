@@ -22,12 +22,11 @@ setPrototype.contains = function(item) {
 
 setPrototype.remove = function(item) {
   var index = this._storage.indexOf(item);
-
   this._storage.splice(index, 1);
-
-
 };
 
 /*
- * Complexity: What is the time complexity of the above functions?
+.add = O(1)
+.contains = O(1)
+.set = O(1)
  */

@@ -56,9 +56,7 @@ Graph.prototype.removeNode = function(node) {
 // {nodes: [2, 1, 3], edges: {3: [2, 1]}}
 
 Graph.prototype.hasEdge = function(fromNode, toNode) {
-  console.log(this.edges);
   var result = false;
-
   if (this.edges[fromNode].indexOf(toNode) > -1 && this.edges[toNode].indexOf(fromNode) > -1) {
     result = true;
   }
@@ -93,7 +91,13 @@ Graph.prototype.forEachNode = function(cb) {
 
 var graph = new Graph();
 /*
- * Complexity: What is the time complexity of the above functions?
+ .addNode = O(1)
+ .contains = O(n)
+ .removeNode = O(n^2)
+ .hasEdge = O(1)
+ .addEdge = O(1)
+ .removeEdge = O(1)
+ .forEachNode = O(n)
  */
 
 
