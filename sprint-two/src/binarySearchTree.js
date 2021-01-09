@@ -3,13 +3,15 @@ var BinarySearchTree = function(value) {
   binarySearchTree.value = value;
   binarySearchTree.left = null;
   binarySearchTree.right = null;
+  binarySearchTree.sum = 0;
   return binarySearchTree;
 
 
 // bst = {value: 5, left: {value: 2, left: null, right: null}, right: null}
 };
 
-BinarySearchTree.prototype.insert = function (value) { // value = 3
+BinarySearchTree.prototype.insert = function (value) {
+  this.sum += value;
   if (value < this.value) {
     if (this.left === null) {
       this.left = BinarySearchTree(value);
