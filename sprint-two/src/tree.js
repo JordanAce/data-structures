@@ -36,6 +36,25 @@ treeMethods.contains = function(target) {
   return result;
 };
 
+// newTree = {value: 5, children: [{value: 6, children: [{value: 8, children: []}]}, {value: 7, children: []}], {addChild: function, contains: function}}
+
+treeMethods.countChildren = function(target) {
+  var result = 0;
+
+  var innerFunction = function (node) {
+    for (var i = 0; i < node.children.length; i++) {
+      var child = node.children[i];
+      result += node.children.length;
+      if (child.children.length > 0) {
+        result--;
+        innerFunction(child);
+      }
+    }
+  };
+
+  innerFunction(this);
+  return result;
+};
 
 /*
 .addChild = O(1)
