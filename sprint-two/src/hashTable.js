@@ -47,6 +47,16 @@ HashTable.prototype.remove = function(k) {
   }
 };
 
+HashTable.prototype.howManyCollisions = function() {
+  var counter = 0;
+  for (var i = 0; i < this._storage.length; i++) {
+    if (this._storage[i].length > 1) {
+      counter++;
+    }
+  }
+  return counter;
+};
+
 
 
 // HashTable.prototype.remove = function(k) {

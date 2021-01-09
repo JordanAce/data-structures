@@ -47,6 +47,13 @@ describe('hashTable', function() {
     window.getIndexBelowMaxForKey = oldHashFunction;
   });
 
+  it('should accurately return how many buckets include multiple tuples', function() {
+    hashTable.insert('Bob', 'Loblaw');
+    hashTable.insert('Ted', 'Smith');
+    hashTable.insert('Ben', 'Franklin');
+    expect(hashTable.howManyCollisions()).to.equal(0);
+  });
+
   // (Advanced! Remove the extra "x" when you want the following tests to run)
   xit ('should double in size when needed', function() {
     _.each(people, function(person) {
